@@ -117,9 +117,4 @@ DEVICE_MODULES="generic"
 
 #------------------------------------------------------------------------------
 #
-MASTER0_DEVICE=78:e3:b5:cc:41:84
-MASTER0_DEVICE=78:e3:b5:cc:41:84
-MASTER0_DEVICE=78:e3:b5:cc:41:84
-MASTER0_DEVICE=78:e3:b5:cc:41:84
-MASTER0_DEVICE=78:e3:b5:cc:41:84
-MASTER0_DEVICE=78:e3:b5:cc:41:84
+
