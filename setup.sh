@@ -61,7 +61,8 @@ cd linuxcnc-ethercat
 make
 cd ..
 
-# change dev/EtherCAT0 
+# set up and change dev/EtherCAT0 
+sudo mknod /dev/EtherCAT0 c 89 1
 sudo chmod go+rw /dev/EtherCAT0
 
 # Install linuxcnc as rip
