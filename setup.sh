@@ -48,6 +48,10 @@ echo "Mac adres : $(cat /sys/class/net/enp0s25/address), writing the Mac adres t
 sudo cp ethercat /etc/default/
 echo "Copy ethercat file to system folder /etc/default/"
 
+# This permanent solution will set ethercat rules from root to user, dev/EtherCAT0 user permission's are ok at startup this way.
+sudo rm /etc/udev/rules.d/99-ethercat.rules
+sudo echo "KERNEL=="\"EtherCAT[0-9]*\"", MODE="\"$var\"", GROUP=" "\"$USER\"" >> /etc/udev/rules.d/99-ethercat.rules
+
 # Update ethercat config
 sudo update-ethercat-config
 echo "Starting ethercat bus"
@@ -60,14 +64,6 @@ git clone https://github.com/grotius-cnc/linuxcnc-ethercat.git
 cd linuxcnc-ethercat
 make
 cd ..
-
-# set up and change dev/EtherCAT0 
-#sudo mknod /dev/EtherCAT0 c 89 1
-#sudo chmod go+rw /dev/EtherCAT0
-
-# This permanent solution will set ethercat rules from root to user, dev/EtherCAT0 user permission's are ok at startup this way.
-sudo rm /etc/udev/rules.d/99-ethercat.rules
-sudo echo "KERNEL=="\"EtherCAT[0-9]*\"", MODE="\"$var\"", GROUP=" "\"$USER\"" >> /etc/udev/rules.d/99-ethercat.rules
 
 # Install linuxcnc as rip
 git clone https://github.com/grotius-cnc/linuxcnc.git
@@ -95,6 +91,10 @@ cd .. && cd .. && cd linuxcnc/scripts
 . ./rip-environment
 linuxcnc # Integrate a ethercat example to the source.
 
+# old, for info :
+# set up and change dev/EtherCAT0 
+# sudo mknod /dev/EtherCAT0 c 89 1
+# sudo chmod go+rw /dev/EtherCAT0
 
 
 
