@@ -99,8 +99,8 @@ su
 
 echo "Copy ethercat rules to etc/udev/rules.d/99-ethercat.rules/.."
 
-sudo rm /etc/udev/rules.d/99-ethercat.rules
-sudo echo "KERNEL=="\"EtherCAT[0-9]*\"", MODE="\"0660\"", GROUP=""\"$USER\"" >> /etc/udev/rules.d/99-ethercat.rules
+rm /etc/udev/rules.d/99-ethercat.rules
+echo "KERNEL=="\"EtherCAT[0-9]*\"", MODE="\"0660\"", GROUP=""\"$USER\"" >> /etc/udev/rules.d/99-ethercat.rules
 
 echo "Done, starting linuxcnc"
 
