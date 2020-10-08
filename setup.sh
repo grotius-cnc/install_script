@@ -89,32 +89,17 @@ cd .. && cd .. && cd linuxcnc/scripts
 
 . ./rip-environment
 
-# This permanent solution will set ethercat rules from root to user, dev/EtherCAT0 user permission's are ok at startup this way.
-
-echo "Type your normal password to get a root account with the same password .."
-sudo passwd root
-
-echo "Login as root now, type password"
-su
-
-echo "Copy ethercat rules to etc/udev/rules.d/99-ethercat.rules/.."
-
-echo "KERNEL=="\"EtherCAT[0-9]*\"", MODE="\"0660\"", GROUP=""\"$USER\"" >> /etc/udev/rules.d/99-ethercat.rules
-
-echo "Done, starting linuxcnc"
-
-exit #logout as root
-
 # Start linuxcnc as normal user
 linuxcnc 
+
+# Reboot pc.
 
 # When linuxcnc starts, select axis.ini config, select -> create desktop icon.
 # The axis.ini config will load a minimal ethercat application.
 # Check the linuxcnc halmeter if your lcec pin's are present.
 # Modify your ethercat config in : postgui.hal & ethercat-conf.xml 
 
-# /lib/modules/4.19.0-11-rt-amd64/updates/dkms/ec_master.ko
-# /lib/modules/4.19.0-11-rt-amd64/updates/dkms/ec_generic.ko
+# Reboot pc -> then ./setup1.sh
 
 
 
