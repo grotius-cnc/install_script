@@ -96,8 +96,10 @@ echo "Done, starting linuxcnc"
 
 linuxcnc 
 
-# When linuxcnc starts, select axis.ini config, this will load a ethercat configuration.
-# Check linuxcnc halmeter if your lcec pin's are present.
+# When linuxcnc starts, select axis.ini config, select -> create desktop icon.
+# The axis.ini config will load a minimal ethercat application.
+# Check the linuxcnc halmeter if your lcec pin's are present.
+# Modify your ethercat config in : postgui.hal & ethercat-conf.xml 
 
 
 
