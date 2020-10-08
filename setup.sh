@@ -113,6 +113,8 @@ linuxcnc
 # Check the linuxcnc halmeter if your lcec pin's are present.
 # Modify your ethercat config in : postgui.hal & ethercat-conf.xml 
 
+# /lib/modules/4.19.0-11-rt-amd64/updates/dkms/ec_master.ko
+# /lib/modules/4.19.0-11-rt-amd64/updates/dkms/ec_generic.ko
 
 
 
