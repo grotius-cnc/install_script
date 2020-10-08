@@ -50,7 +50,7 @@ echo "Copy ethercat file to system folder /etc/default/"
 
 # This permanent solution will set ethercat rules from root to user, dev/EtherCAT0 user permission's are ok at startup this way.
 sudo rm /etc/udev/rules.d/99-ethercat.rules
-sudo echo "KERNEL=="\"EtherCAT[0-9]*\"", MODE="\"$var\"", GROUP=" "\"$USER\"" >> /etc/udev/rules.d/99-ethercat.rules
+sudo echo "KERNEL=="\"EtherCAT[0-9]*\"", MODE="\"0660\"", GROUP=""\"$USER\"" >> /etc/udev/rules.d/99-ethercat.rules
 
 # Update ethercat config
 sudo update-ethercat-config
