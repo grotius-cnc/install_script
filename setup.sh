@@ -104,6 +104,9 @@ sudo echo "KERNEL=="\"EtherCAT[0-9]*\"", MODE="\"0660\"", GROUP=""\"$USER\"" >> 
 
 echo "Done, starting linuxcnc"
 
+exit #logout as root
+
+# Start linuxcnc as normal user
 linuxcnc 
 
 # When linuxcnc starts, select axis.ini config, select -> create desktop icon.
