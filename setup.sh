@@ -1,6 +1,16 @@
 #!/bin/bash
 #This script is used to install ethercat on linux debian 10 buster.
 
+# The files will be installed in a directory where the setup.sh file is.
+
+# This install script will install :
+# - ec-debianize (etherlab source code + linuxcnc patches)
+# - linuxcnc-ethercat (lcec driver)
+# - linuxcnc (a linuxcnc rip installation with ethercat example)
+# - a root password
+# - auto configure your mac adres
+# - set udev rules for ethercat
+
 echo "Installing linux kernel header files for $(uname -r) and dependencies"
 sudo apt-get install linux-headers-$(uname -r) debhelper dkms gettext autoconf automake libtool quilt mercurial git xarchiver wget libexpat1-dev dh-python rtai-modules-4.14.174-dbgsym tcl8.6-dev tk8.6-dev libreadline-gplv2-dev asciidoc dblatex docbook-xsl dvipng ghostscript graphviz groff imagemagick inkscape python-lxml source-highlight w3c-linkchecker xsltproc texlive-extra-utils texlive-font-utils texlive-fonts-recommended texlive-lang-cyrillic texlive-lang-french texlive-lang-german texlive-lang-polish texlive-lang-spanish texlive-latex-recommended asciidoc-dblatex python-dev libxmu-dev libglu1-mesa-dev libgl1-mesa-dev libgtk2.0-dev intltool libboost-python-dev netcat libmodbus-dev libusb-1.0-0-dev yapps2 libtirpc-dev
 
