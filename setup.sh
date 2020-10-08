@@ -94,12 +94,10 @@ sudo echo "KERNEL=="\"EtherCAT[0-9]*\"", MODE="\"0660\"", GROUP=""\"$USER\"" >> 
 
 echo "Done, starting linuxcnc"
 
-linuxcnc # Integrate a ethercat example to the source.
+linuxcnc 
 
-# old, for info :
-# set up and change dev/EtherCAT0 
-# sudo mknod /dev/EtherCAT0 c 89 1
-# sudo chmod go+rw /dev/EtherCAT0
+# When linuxcnc starts, select axis.ini config, this will load a ethercat configuration.
+# Check linuxcnc halmeter if your lcec pin's are present.
 
 
 
